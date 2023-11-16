@@ -26,5 +26,6 @@ jobs:
               git pull origin develop &&
               sudo npm i &&
               sudo npm run build &&
-              sudo yarn pm2:deploy:app
+              sudo npm run build && 
+              sudo pm2 start app.json
               '
