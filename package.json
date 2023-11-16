@@ -23,7 +23,11 @@
     "typeorm-cli": "ts-node ./node_modules/typeorm/cli.js $*",
     "migrate:run": "npm run typeorm-cli migration:run",
     "migrate:revert": "npm run typeorm-cli migration:revert",
-    "migrate:create": "ts-node ./node_modules/typeorm/cli.js migration:create -d src/database/migrations -n $*"
+    "migrate:create": "ts-node ./node_modules/typeorm/cli.js migration:create -d src/database/migrations -n $*",
+    "pm2:deploy:app": "npm run build && pm2 start app.json",
+    "pm2:start:app": "pm2 start app.json",
+    "pm2:stop:app": "pm2 stop app.json",
+    "pm2:destroy:app": "pm2 delete app.json"
   },
   "dependencies": {
     "@nestjs/common": "^8.1.1",
